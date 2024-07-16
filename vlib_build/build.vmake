@@ -3,7 +3,7 @@
 #/  VIRIX Source File.
 #/  Copyright (C) 2024 S/N: V-01
 #/ -------------------------------------------------------------------------
-#/  File name:   rules.vmake
+#/  File name:   build.vmake
 #/  Version:     v1.00
 #/  Created:     16/07/24 by V.
 #/  Description: 
@@ -12,14 +12,6 @@
 #/
 #///////////////////////////////////////////////////////////////////////////
 
-.gitignore
+include_rules
 
-c_compiler = clang
-
-global_flags = -DVLIB_ON_CRT -march=x86-64-v3 -maes
-global_link =
-virix_flags = -I vlib
-virix_link =
-
-!cvirix = |> $(c_compiler) -c %f -o %o $(global_flags) $(virix_flags) |> %B.o
-!linkvirix = |> $(c_compiler) %f -o %o $(global_link) $(virix_link) |>
+: foreach ../vlib/*.c |> !cvirix |>
