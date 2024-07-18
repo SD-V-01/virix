@@ -15,3 +15,13 @@
 include_rules
 
 : foreach ../vlib/*.c |> !cvirix |>
+
+vlib_folder = ../vlib
+
+: foreach $(vlib_folder)/mimalloc/alloc.c $(vlib_folder)/mimalloc/alloc-aligned.c\
+$(vlib_folder)/mimalloc/alloc-posix.c $(vlib_folder)/mimalloc/arena.c $(vlib_folder)/mimalloc/bitmap.c\
+$(vlib_folder)/mimalloc/heap.c $(vlib_folder)/mimalloc/init.c $(vlib_folder)/mimalloc/libc.c\
+$(vlib_folder)/mimalloc/options.c $(vlib_folder)/mimalloc/os.c $(vlib_folder)/mimalloc/page.c\
+$(vlib_folder)/mimalloc/random.c $(vlib_folder)/mimalloc/segment.c $(vlib_folder)/mimalloc/segment-map.c\
+$(vlib_folder)/mimalloc/stats.c $(vlib_folder)/mimalloc/prim/prim.c\
+|> !cvirix -I ../vlib |>
