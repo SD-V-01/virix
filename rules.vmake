@@ -18,7 +18,7 @@ c_compiler = clang
 
 global_flags = -O2 -g -fPIC -nostdlib -fno-exceptions -fno-builtin -DVLIB_USE_OXR -DVLIB_ON_CRT -march=x86-64-v3 -maes
 global_link =
-virix_flags = -I vlib -DVIRIX_DEBUG
+virix_flags = -I vlib -DVIRIX_DEBUG -DVLIB_USE_OXR
 virix_link = -lopenxr_loader
 
 !cvirix = |> $(c_compiler) -c %f -o %o $(global_flags) $(virix_flags) |> %B.o

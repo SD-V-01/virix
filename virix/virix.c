@@ -20,6 +20,7 @@ void vrt_preInitUsr(){
 
 }
 
+#if 0
 static void testInitTestJobInit() {
 	vsys_writeConsoleNullStr("Initializing \"TestJob\"\n");
 
@@ -46,10 +47,15 @@ static void testInit() {
 
 }
 
+#endif
+
 //NOTE(V): To anyone who is not familiar with my no-libc way of working, vrt_usrCode is main
 //int main(int argc, char argv[]){
 
 void vrt_usrCode() {
-	testInit();
+	//testInit();
+	vrtinitRun();
+	//mdConLog("Testing logging\n");
+	//mdConDumpToStdout();
 
 }
