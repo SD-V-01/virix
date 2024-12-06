@@ -1,3 +1,6 @@
 [submodule "core"]
 	path = core
 	url = git@github.com:SD-V-01/vlib.git
+[submodule "sdk_openvr"]
+	path = sdk_openvr
+	url = git@github.com:ValveSoftware/openvr.git
